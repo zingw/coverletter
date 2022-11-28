@@ -1,1 +1,55 @@
 /* You can add global styles to this file, and also import other style files */
+@import '../node_modules/bootstrap/dist/css/bootstrap.css';
+body,html{
+  height: 100%;
+  background: #ffc7b4;
+}
+.main-box{
+  background: aliceblue;
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  right : 25%;
+  border-radius: 20px;
+}
+.main-box .header{
+  background: #fff;
+  width: 100%;
+  height: 200px;
+  border-radius : 20px 20px 0 0;
+}
+.main-box .header .img-box{
+  border-radius: 50%;
+  background: wheat;
+  width: 200px;
+  height: 200px;
+}
+.main-box .header .name-banner{
+  margin-right: 50px;
+}
+
+div.main-box div.row{
+  padding: 0 !important;
+  margin-left: 0;
+  margin-right: 0;
+  height: 60px;
+  font-family: "Constantia", serif;
+  font-weight: bold;
+  font-size: 20px;
+
+}
+div.col-4{
+  vertical-align: middle;
+  line-height: 60px;
+}
+div.col-4 a{
+  padding: inherit;
+}
+div.nav-bar div.col-4:hover{
+  background: lightcoral;
+  color : white;
+  cursor: pointer;
+}
+
+
+
