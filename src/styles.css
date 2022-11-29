@@ -1,13 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @import '../node_modules/bootstrap/dist/css/bootstrap.css';
-body,html{
+
+  html{
   height: 100%;
-  background: #ffc7b4;
+  min-height: 1000px;
+  background: #929292;
 }
 .main-box{
   background: aliceblue;
   width: 50%;
-  height: 100%;
+  height: inherit;
   position: absolute;
   right : 25%;
   border-radius: 20px;
@@ -33,10 +35,10 @@ div.main-box div.row{
   margin-left: 0;
   margin-right: 0;
   height: 60px;
-  font-family: "Constantia", serif;
-  font-weight: bold;
+  font-family: "Constantia", cursive;
+  font-weight: normal;
   font-size: 20px;
-
+  background: #fff;
 }
 div.col-4{
   vertical-align: middle;
@@ -44,12 +46,36 @@ div.col-4{
 }
 div.col-4 a{
   padding: inherit;
+  color : black;
+
 }
 div.nav-bar div.col-4:hover{
-  background: lightcoral;
-  color : white;
+  background: #d4d4d4;
   cursor: pointer;
 }
 
-
-
+div.dropdown-menu{
+  width: 33.33%;
+  height: 90px;
+  background: #fff;
+  border-top-width: 0px;
+  position: absolute;
+  inset: 0px auto auto 0px;
+  margin: 0px;
+  transform: translate(640px, 262px);
+  border-radius: 0 0 10px 10px;
+}
+.wrapper-content{
+  padding: 20px;
+  width: 100%;
+  height: 100% !important;
+  min-height: 1000px !important;
+  border: 1px solid #929292;
+  border-radius: 20px ;
+}
+img{
+  vertical-align: middle;
+  width:200px;
+  height: 200px;
+  border-radius: 50%;
+}

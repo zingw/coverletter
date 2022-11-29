@@ -13,7 +13,7 @@ const routes: Routes = [
     component : AboutMeComponent
   },
   {
-    path : 'sample-project',
+      path : 'sample-project',
     loadChildren: () => import(`./sampleproject/sample-project-routing.module`).then(m => m.SampleProjectRoutingModule),
   },
 ];

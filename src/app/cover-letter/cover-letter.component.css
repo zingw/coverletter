@@ -1,0 +1,33 @@
+.main-cv{
+  width: 100%;
+  height: inherit;
+  min-height: 1000px;
+  background: #fff;
+  border-radius: 10px;
+}
+.basic-info{
+  min-height: inherit;
+  border-right: 1px solid #d4d4d4;
+}
+.work-skills{
+  min-height: inherit;
+  padding: 20px;
+}
+.fa{
+  margin-left: 5px;
+  width: 0px;
+  height: 30px;
+  color: lightblue;
+}
+th,td{
+  text-align: center;
+}
+th {
+  color: #929292;
+}
+td{
+  width: 40px;
+}
+h4{
+  color: lightblue;
+}
