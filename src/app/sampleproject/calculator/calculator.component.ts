@@ -27,7 +27,10 @@ export class CalculatorComponent implements OnInit {
   }
 
   subText() {
-    this.text = this.text.substring(0,this.text.length-1)
+    if(this.text.toString().length >= 1){
+      this.text = this.text.toString().substring(0,this.text.length-1)
+    }else
+    console.log('you have nothing left to clear');
   }
 }
 
