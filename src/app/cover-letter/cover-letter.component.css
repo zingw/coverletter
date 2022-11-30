@@ -14,10 +14,12 @@
   padding: 20px;
 }
 .fa{
-  margin-left: 5px;
+  margin-left: 17px;
   width: 0px;
   height: 30px;
-  color: lightblue;
+  color: dodgerblue;
+  cursor: pointer;
+  font-size: 24px;
 }
 th,td{
   text-align: center;
@@ -29,5 +31,10 @@ td{
   width: 40px;
 }
 h4{
-  color: lightblue;
+  color: dodgerblue;
+}
+
+.basic-info span{
+  margin-left: 40px;
+  font-size: 16px;
 }
