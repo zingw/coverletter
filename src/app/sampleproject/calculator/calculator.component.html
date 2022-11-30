@@ -1,1 +1,38 @@
-<p>calucator works!</p>
+<div class="calculator">
+  <div class="d-flex flex-column">
+    <textarea class="form-control w-100" [(ngModel)]="text" maxlength="150"></textarea>
+    <div class="result "><span>{{result}}</span></div>
+  </div>
+  <div class="numpad">
+    <div class="row">
+      <div class="col-sm-3" (click)="append('(')"><span>(</span></div>
+      <div class="col-sm-3" (click)="append(')')"><span>)</span></div>
+      <div class="col-sm-3" (click)="subText()"><span>DEL</span></div>
+      <div class="col-sm-3" (click)="this.text = ''; this.result = '0'"><span>CE</span></div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3" (click)="append('7')"><span>7</span></div>
+      <div class="col-sm-3" (click)="append('9')"><span>9</span></div>
+      <div class="col-sm-3" (click)="append('9')"><span>9</span></div>
+      <div class="col-sm-3" (click)="append('/')"><span>/</span></div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3" (click)="append('4')"><span>4</span></div>
+      <div class="col-sm-3" (click)="append('5')"><span>5</span></div>
+      <div class="col-sm-3" (click)="append('6')"><span>6</span></div>
+      <div class="col-sm-3" (click)="append('x')"><span>x</span></div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3" (click)="append('1')"><span>1</span></div>
+      <div class="col-sm-3" (click)="append('2')"><span>2</span></div>
+      <div class="col-sm-3" (click)="append('3')"><span>3</span></div>
+      <div class="col-sm-3" (click)="append('-')"><span>-</span></div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3" (click)="append('0')"><span>0</span></div>
+      <div class="col-sm-3" (click)="append('.')"><span>.</span></div>
+      <div class="col-sm-3" (click)=exeMath()><span>=</span></div>
+      <div class="col-sm-3" (click)="append('+')"><span>+</span></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+div.calculator {
+  width: 50%;
+  height: 500px;
+  position: absolute;
+  left: 25%;
+  border-radius: 20px !important;
+  border: 1px solid #aeaeae;
+}
+
+div.result {
+  height: 50px;
+  background-color: #fff;
+  position: relative;
+}
+
+div.result span{
+  position: absolute;
+  right : 5px;
+  bottom: 5px;
+  font-size: 20px;
+}
+
+textarea {
+  border-radius: 20px 20px 0 0 !important;
+  height: 100px;
+}
+
+.col-sm-3 {
+  text-align: center;
+  border: 1px solid #929292;
+  vertical-align: middle;
+  line-height: 60px;
+  cursor: pointer;
+  background-color: white;
+}
+
+.col-sm-3 :hover{
+  font-weight: bolder;
+}
+
+.test :hover {
+  background-color: blue !important;
+}
+
+
+
+
