@@ -3,7 +3,6 @@ import * as dayjs from "dayjs";
 import {MyTask} from "./model/my-task";
 import Swal, {SweetAlertOptions} from 'sweetalert2'
 import {Common} from "../../service/common";
-import {diff} from "ngx-bootstrap/chronos/moment/diff";
 
 const {v4: uuidv4} = require('uuid');
 
@@ -17,7 +16,7 @@ export class TodoListComponent implements OnInit {
 
   tasks: MyTask[] = [];
   taskBin: MyTask[] = [];
-  taskName ?: string;
+  taskName : string | null = '';
 
   constructor() {
   }
@@ -26,6 +25,10 @@ export class TodoListComponent implements OnInit {
   }
 
   createTask(): void {
+    if(this.taskName == null || this.taskName.trim() === ''){
+      this.emptyWarning();
+      return;
+    }
     const task = {
       id: uuidv4(),
       name: this.taskName,
@@ -36,13 +39,14 @@ export class TodoListComponent implements OnInit {
     }
     task.name = Common.upperFirstLetter(task.name!);
     this.tasks?.push(task);
+    this.taskName = '';
     console.log('task added successfully at ', dayjs().format('hh:mm DD/MM/YYYY'), task)
   }
 
   removeTask(task ?: MyTask): void {
     const options: SweetAlertOptions<any, any> = {
       title: 'Tell me the reason...',
-      icon : 'question',
+      icon: 'question',
       input: 'text',
       showCancelButton: true,
       confirmButtonText: 'Save',
@@ -64,15 +68,15 @@ export class TodoListComponent implements OnInit {
     })
   }
 
-  finishTask(task? : MyTask) : void{
-    const time = dayjs().diff(task?.createdDate,'minutes');
+  finishTask(task?: MyTask): void {
+    const time = dayjs().diff(task?.createdDate, 'minutes');
     const options: SweetAlertOptions<any, any> = {
       title: 'Congratulations!',
-      icon : 'success',
-      text : `It takes only ${time} minutes to finish, what a man !`,
+      icon: 'success',
+      text: `It takes only ${time} minutes to finish, what a man !`,
       showCancelButton: false,
       showConfirmButton: false,
-      timer : 1000
+      timer: 1000
     };
     Swal.fire(options).then((result) => {
 
@@ -93,16 +97,16 @@ export class TodoListComponent implements OnInit {
       denyButtonText: `Cancel`,
     };
     Swal.fire(options,).then((result) => {
-      if (result.isConfirmed) {
-        // update list
+      if (result.isConfirmed && result.value.toString().trim() !== '') {
         const currIndex = this.getCurrentIndex(task);
         task!.name = Common.upperFirstLetter(result.value);
         this.tasks[currIndex] = task!;
         Swal.fire('Saved!', '', 'success')
       } else if (result.isDenied) {
         Swal.fire('Changes are not saved', '', 'info')
+      }else{
+        this.emptyWarning();
       }
-      console.log(result);
     })
   }
 
@@ -144,5 +148,19 @@ export class TodoListComponent implements OnInit {
     return i;
   }
 
+  onKeydown(event ?: any): void {
+    if (event.key === "Enter") {
+      this.createTask();
+    }
+  }
 
+  emptyWarning() : void {
+    const options: SweetAlertOptions<any, any> = {
+      title: 'Field Empty',
+      text: 'Please type a valid name ',
+      icon: 'question',
+      timer: 3000
+    };
+    Swal.fire(options);
+  }
 }

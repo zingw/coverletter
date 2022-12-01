@@ -1,7 +1,7 @@
 <div class="wrapper">
   <div class="input-group mb-3">
     <input type="text" class="form-control input-task" placeholder="Add Task"
-           aria-describedby="basic-addon2" [(ngModel)]="taskName">
+           aria-describedby="basic-addon2" [(ngModel)]="taskName" (keydown.enter)="onKeydown($event)" >
     <button class="input-group-text add-btn" id="basic-addon2" (click)="createTask()"><i class="fa fa-plus"></i>
     </button>
   </div>
@@ -23,8 +23,10 @@
         <td><span>{{task.createdDate!.format('hh:mm:ss DD/MM/YYYY')}}</span></td>
         <td>
           <div class="action">
-            <button class="btn" (click)="swapUp(task)" [disabled]="reachedTop(task)"><i class="fa fa-arrow-up"></i></button>
-            <button class="btn" (click)="swapDown(task)" [disabled]="reachedLast(task)"><i class="fa fa-arrow-down"></i></button>
+            <button class="btn" (click)="swapUp(task)" [disabled]="reachedTop(task)"><i class="fa fa-arrow-up"></i>
+            </button>
+            <button class="btn" (click)="swapDown(task)" [disabled]="reachedLast(task)"><i class="fa fa-arrow-down"></i>
+            </button>
             <button class="btn" (click)="updateTask(task)"><i class="fa fa-edit"></i></button>
             <button class="btn" (click)="removeTask(task)"><i class="fa fa-remove"></i></button>
             <button class="btn" (click)="finishTask(task)"><i class="fa fa-check"></i></button>
