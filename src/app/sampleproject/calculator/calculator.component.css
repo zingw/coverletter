@@ -3,6 +3,7 @@ div.calculator {
   height: 500px;
   position: absolute;
   left: 25%;
+  top: 50px;
   border-radius: 20px !important;
   border: 1px solid #aeaeae;
 }
@@ -11,6 +12,7 @@ div.result {
   height: 50px;
   background-color: #fff;
   position: relative;
+  border: 1px solid #aeaeae;
 }
 
 div.result span{
@@ -23,6 +25,7 @@ div.result span{
 textarea {
   border-radius: 20px 20px 0 0 !important;
   height: 100px;
+  resize: none;
 }
 
 .col-sm-3 {
