@@ -4,7 +4,7 @@ export class MyTask {
   public id ?: string;
   public name ?: string;
   public createdDate ?: dayjs.Dayjs;
-  public solved ?: boolean;
+  public solvedTime ?: number;
   public deleted ?: boolean;
   public reason ?: string;
   public important ?: boolean;

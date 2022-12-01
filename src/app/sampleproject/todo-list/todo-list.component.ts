@@ -16,6 +16,8 @@ export class TodoListComponent implements OnInit {
 
   tasks: MyTask[] = [];
   taskBin: MyTask[] = [];
+  finishedTask: MyTask[] = [];
+
   taskName : string | null = '';
 
   constructor() {
@@ -69,18 +71,18 @@ export class TodoListComponent implements OnInit {
   }
 
   finishTask(task?: MyTask): void {
-    const time = dayjs().diff(task?.createdDate, 'minutes');
+    task!.solvedTime = dayjs().diff(task?.createdDate, 'minutes');
     const options: SweetAlertOptions<any, any> = {
       title: 'Congratulations!',
       icon: 'success',
-      text: `It takes only ${time} minutes to finish, what a man !`,
+      text: `It takes only ${task!.solvedTime} minutes to finish, what a man !`,
       showCancelButton: false,
       showConfirmButton: false,
       timer: 1000
     };
     Swal.fire(options).then((result) => {
 
-      this.taskBin.push(task!);
+      this.finishedTask.push(task!);
       this.tasks = this.tasks.filter(obj => {
         return obj !== task
       });
