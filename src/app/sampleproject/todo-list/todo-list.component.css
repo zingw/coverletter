@@ -1,8 +1,8 @@
 .wrapper{
-  width: 50%;
+  width: 80%;
   height: 500px;
   position: absolute;
-  left: 25%;
+  left: 10%;
   top: 50px;
 }
 
@@ -13,11 +13,46 @@
   top: 50px;
   border-radius: 20px !important;
   border: 1px solid #aeaeae;
-  background-color: #aeaeae;
+  background-color: #f0f0f0;
 }
 
 .add-btn, .input-task {
   border-radius: 20px;
+}
+.fa-arrow-up{
+  color : mediumpurple;
+}
+.fa-arrow-down{
+  color : #9d8e00;
+}
+.fa-remove{
+  color : red;
+}
+.fa-edit{
+  color : dodgerblue;
+}
+
+.fa-check{
+  color: #49c03a;
+}
+
+.task-item{
+  padding-left: -2px;
+  margin-top: 10px;
+  border-bottom: 1px solid gray;
+}
+
+th.stt{
+  width: 1%;
+}
+th.task{
+  width: 11%;
+}
+th.date{
+  width: 4%;
+}
+th.action{
+  width: 10%;
 }
 
 

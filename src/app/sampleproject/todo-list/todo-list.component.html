@@ -2,10 +2,37 @@
   <div class="input-group mb-3">
     <input type="text" class="form-control input-task" placeholder="Add Task"
            aria-describedby="basic-addon2" [(ngModel)]="taskName">
-    <button class="input-group-text add-btn" id="basic-addon2" (click)="createTask()"><i class="fa fa-plus"></i></button>
+    <button class="input-group-text add-btn" id="basic-addon2" (click)="createTask()"><i class="fa fa-plus"></i>
+    </button>
   </div>
-  <div class="todo-list">
+  <div class="todo-list table-responsive">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th class="stt">STT</th>
+        <th class="task">Task</th>
+        <th class="date">Date Created</th>
+        <th class="action">Action</th>
+      </tr>
+      </thead>
 
+      <tbody>
+      <tr *ngFor="let task of tasks;let i =  index">
+        <td><span>{{i + 1}}</span></td>
+        <td><span>{{task.name}}</span></td>
+        <td><span>{{task.createdDate!.format('hh:mm:ss DD/MM/YYYY')}}</span></td>
+        <td>
+          <div class="action">
+            <button class="btn" (click)="swapUp(task)" [disabled]="reachedTop(task)"><i class="fa fa-arrow-up"></i></button>
+            <button class="btn" (click)="swapDown(task)" [disabled]="reachedLast(task)"><i class="fa fa-arrow-down"></i></button>
+            <button class="btn" (click)="updateTask(task)"><i class="fa fa-edit"></i></button>
+            <button class="btn" (click)="removeTask(task)"><i class="fa fa-remove"></i></button>
+            <button class="btn" (click)="finishTask(task)"><i class="fa fa-check"></i></button>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 
