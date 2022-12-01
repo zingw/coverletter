@@ -1,0 +1,23 @@
+.wrapper{
+  width: 50%;
+  height: 500px;
+  position: absolute;
+  left: 25%;
+  top: 50px;
+}
+
+.todo-list{
+  width: 100%;
+  height: 500px;
+  position: absolute;
+  top: 50px;
+  border-radius: 20px !important;
+  border: 1px solid #aeaeae;
+  background-color: #aeaeae;
+}
+
+.add-btn, .input-task {
+  border-radius: 20px;
+}
+
+

@@ -1,1 +1,11 @@
-<p>todo-list works!</p>
+<div class="wrapper">
+  <div class="input-group mb-3">
+    <input type="text" class="form-control input-task" placeholder="Add Task"
+           aria-describedby="basic-addon2" [(ngModel)]="taskName">
+    <button class="input-group-text add-btn" id="basic-addon2" (click)="createTask()"><i class="fa fa-plus"></i></button>
+  </div>
+  <div class="todo-list">
+
+  </div>
+</div>
+
