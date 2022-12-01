@@ -1,6 +1,6 @@
 <div class="wrapper">
   <div class="input-group mb-3">
-    <input type="text" class="form-control input-task" placeholder="Add Task"
+    <input type="text" class="form-control input-task" placeholder="Thêm việc"
            aria-describedby="basic-addon2" [(ngModel)]="taskName" (keydown.enter)="onKeydown($event)" >
     <button class="input-group-text add-btn" id="basic-addon2" (click)="createTask()"><i class="fa fa-plus"></i>
     </button>
@@ -11,8 +11,8 @@
       <tr>
         <th class="stt">STT</th>
         <th class="task">Task</th>
-        <th class="date">Date Created</th>
-        <th class="action">Action</th>
+        <th class="date">Ngày thêm</th>
+        <th class="action">Thao tác</th>
       </tr>
       </thead>
 
@@ -37,15 +37,15 @@
     </table>
   </div>
 
-  <h3>Finished Task</h3>
+  <h3>Việc đã hoàn thành</h3>
   <div class="todo-list table-responsive">
     <table class="table table-hover">
       <thead>
       <tr>
         <th class="stt">STT</th>
         <th class="task">Task</th>
-        <th class="date">Date Created</th>
-        <th class="action">Time finished (min)</th>
+        <th class="date">Ngày thêm</th>
+        <th class="action">Thời gian hoàn thành ( phút )</th>
 
       </tr>
       </thead>
@@ -61,15 +61,15 @@
     </table>
   </div>
 
-  <h3>Abandoned Task</h3>
+  <h3>Việc không làm được</h3>
   <div class="todo-list table-responsive">
     <table class="table table-hover">
       <thead>
       <tr>
         <th class="stt">STT</th>
         <th class="task">Task</th>
-        <th class="date">Date Created</th>
-        <th class="action">Cancel Reason</th>
+        <th class="date">Ngày thêm</th>
+        <th class="action">Lý do hủy</th>
       </tr>
       </thead>
 

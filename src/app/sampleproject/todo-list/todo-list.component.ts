@@ -47,12 +47,12 @@ export class TodoListComponent implements OnInit {
 
   removeTask(task ?: MyTask): void {
     const options: SweetAlertOptions<any, any> = {
-      title: 'Tell me the reason...',
+      title: 'Cho tôi biết lý do hủy...',
       icon: 'question',
       input: 'text',
       showCancelButton: true,
-      confirmButtonText: 'Save',
-      denyButtonText: `Cancel`,
+      confirmButtonText: 'Lưu',
+      denyButtonText: `Hủy`,
     };
     Swal.fire(options,).then((result) => {
       if (result.isConfirmed) {
@@ -73,9 +73,9 @@ export class TodoListComponent implements OnInit {
   finishTask(task?: MyTask): void {
     task!.solvedTime = dayjs().diff(task?.createdDate, 'minutes');
     const options: SweetAlertOptions<any, any> = {
-      title: 'Congratulations!',
+      title: 'Chúc mừng!',
       icon: 'success',
-      text: `It takes only ${task!.solvedTime} minutes to finish, what a man !`,
+      text: `Chỉ mất ${task!.solvedTime} phút để hoàn thành!`,
       showCancelButton: false,
       showConfirmButton: false,
       timer: 1000
@@ -92,20 +92,20 @@ export class TodoListComponent implements OnInit {
 
   updateTask(task ?: MyTask): void {
     const options: SweetAlertOptions<any, any> = {
-      title: 'Update Task',
+      title: 'Sửa tên việc',
       input: 'text',
       showCancelButton: true,
-      confirmButtonText: 'Save',
-      denyButtonText: `Cancel`,
+      confirmButtonText: 'Lưu',
+      denyButtonText: `Hủy`,
     };
     Swal.fire(options,).then((result) => {
       if (result.isConfirmed && result.value.toString().trim() !== '') {
         const currIndex = this.getCurrentIndex(task);
         task!.name = Common.upperFirstLetter(result.value);
         this.tasks[currIndex] = task!;
-        Swal.fire('Saved!', '', 'success')
+        Swal.fire('Lưu thành công!', '', 'success')
       } else if (result.isDenied) {
-        Swal.fire('Changes are not saved', '', 'info')
+        Swal.fire('Hủy lưu thay đổi', '', 'info')
       }else{
         this.emptyWarning();
       }
@@ -158,8 +158,8 @@ export class TodoListComponent implements OnInit {
 
   emptyWarning() : void {
     const options: SweetAlertOptions<any, any> = {
-      title: 'Field Empty',
-      text: 'Please type a valid name ',
+      title: 'Trống',
+      text: 'Bạn phải viết gì vào chứ ? ',
       icon: 'question',
       timer: 3000
     };
