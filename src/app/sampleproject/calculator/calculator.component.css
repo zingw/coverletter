@@ -34,12 +34,14 @@ textarea {
   background-color: white;
 }
 
-.col-sm-3 :hover{
-  font-weight: bolder;
+.col-sm-3:hover{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
-
-.test :hover {
-  background-color: blue !important;
+.col-sm-3 span:hover{
+  background: gray;
+  padding: 13px 52px;
+  color: white;
 }
 
 
